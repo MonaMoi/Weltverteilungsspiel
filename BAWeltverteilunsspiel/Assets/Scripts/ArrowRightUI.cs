@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowLeftUI : MonoBehaviour
+public class ArrowRightUI : MonoBehaviour
 {
     public Color InactiveColor;
     public Color GazedAtColor;
@@ -53,7 +53,7 @@ public class ArrowLeftUI : MonoBehaviour
     {
         //!TeleportRandomly();
         earth = GameObject.Find("Sphere");
-        earth.transform.Rotate(0, 0, -1f, Space.World);
+        earth.transform.Rotate(0, 0, 1f, Space.World);
     }
     /*public void GazeAt(bool gazing)
     {
