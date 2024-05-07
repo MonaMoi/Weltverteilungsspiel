@@ -53,7 +53,7 @@ public class ArrowRightUI : MonoBehaviour
     {
         //!TeleportRandomly();
         earth = GameObject.Find("Sphere");
-        earth.transform.Rotate(0, 0, 1f, Space.World);
+        earth.transform.Rotate(0, -1f, 0, Space.World);
     }
     /*public void GazeAt(bool gazing)
     {

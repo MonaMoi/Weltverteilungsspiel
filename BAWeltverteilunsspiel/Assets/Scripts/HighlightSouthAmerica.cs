@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighlightContinent : MonoBehaviour
+public class HighlightSouthAmerica : MonoBehaviour
 {
     public Material highlightMaterial;
     private MeshRenderer myRenderer;
+    public GameObject descText;
 
     Material southAmerica;
 
@@ -25,6 +26,9 @@ public class HighlightContinent : MonoBehaviour
         var materialsCopy = myRenderer.materials;
         materialsCopy[5] = southAmerica;
         myRenderer.materials = materialsCopy;
+
+        // set bool to false to not show Continent name on Start
+        descText.SetActive(false);
     }
 
     void Update()
@@ -33,16 +37,18 @@ public class HighlightContinent : MonoBehaviour
     }
 
 
-    /// Method is called by the Main Camera when it starts gazing at this GameObject
+    /// Method is called by the Main Camera when it starts gazing at this GameObject and Continent name is visible
     public void OnPointerEnter()
     {
         GazeAt(true);
+        descText.SetActive(true);
     }
 
-    /// Method is called by the Main Camera when it stops gazing at this GameObject
+    /// Method is called by the Main Camera when it stops gazing at this GameObject and continent name is not visible
     public void OnPointerExit()
     {
         GazeAt(false);
+        descText.SetActive(false);
     }
 
     // Definition of GazeAt Method to set highlight material if OnPointerEnter else set Original Material OnPointerExit
