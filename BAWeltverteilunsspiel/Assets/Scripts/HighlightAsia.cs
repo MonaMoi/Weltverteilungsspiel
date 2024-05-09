@@ -6,7 +6,19 @@ public class HighlightAsia : MonoBehaviour
 {
     public Material highlightMaterial;
     private MeshRenderer myRenderer;
+
     public GameObject descText;
+
+    public GameObject CanvasShoworHideAsia;
+    public GameObject CanvasShoworHideAfrica;
+    public GameObject CanvasShoworHideEurope;
+    public GameObject CanvasShoworHideSouthamerica;
+    public GameObject CanvasShoworHideNorthamerica;
+    public GameObject CanvasShoworHideAustralia;
+    public GameObject CanvasShoworHideAntartica;
+
+
+    public GameObject CanvasAnswers;
 
     Material asia;
 
@@ -21,7 +33,7 @@ public class HighlightAsia : MonoBehaviour
         asia = Resources.Load("Asia") as Material;
 
         // materialsCopy becomes Array of Materials of Sphere
-        // Put loaded Material on Position 6
+        // Put loaded Material on Position 1
         // Array of Materials of Sphere becomes Copy
         var materialsCopy = myRenderer.materials;
         materialsCopy[1] = asia;
@@ -29,6 +41,8 @@ public class HighlightAsia : MonoBehaviour
 
         // set bool to false to not show Continent name on Start
         descText.SetActive(false);
+        CanvasShoworHideAsia.SetActive(false);
+        CanvasAnswers.SetActive(false);
     }
 
     void Update()
@@ -42,6 +56,7 @@ public class HighlightAsia : MonoBehaviour
     {
         GazeAt(true);
         descText.SetActive(true);
+        CanvasAnswers.SetActive(true);
     }
 
     /// Method is called by the Main Camera when it stops gazing at this GameObject and continent name is not visible
@@ -49,6 +64,7 @@ public class HighlightAsia : MonoBehaviour
     {
         GazeAt(false);
         descText.SetActive(false);
+        CanvasAnswers.SetActive(false);
     }
 
     // Definition of GazeAt Method to set highlight material if OnPointerEnter else set Original Material OnPointerExit
@@ -68,10 +84,31 @@ public class HighlightAsia : MonoBehaviour
         }
     }
 
-    /*public void OnPointerClick()
+    // Check if Question Canvas from different continents are visible and hide it, else show Question Canvas of pointed continent
+    public void OnPointerClick()
     {
+        if (CanvasShoworHideAfrica)
+            CanvasShoworHideAfrica.SetActive(false);
+
+        if (CanvasShoworHideEurope)
+            CanvasShoworHideEurope.SetActive(false);
+
+        if (CanvasShoworHideSouthamerica)
+            CanvasShoworHideSouthamerica.SetActive(false);
+
+        if (CanvasShoworHideNorthamerica)
+            CanvasShoworHideNorthamerica.SetActive(false);
+
+        if (CanvasShoworHideAustralia)
+            CanvasShoworHideAustralia.SetActive(false);
+
+        if (CanvasShoworHideAntartica)
+            CanvasShoworHideAntartica.SetActive(false);
+
+        CanvasShoworHideAsia.SetActive(true);
+
         //!TeleportRandomly();
-        earth = GameObject.Find("Sphere");
-        earth.transform.Rotate(0, 0, 1f, Space.World);
-    }*/
+        //earth = GameObject.Find("Sphere");
+        //earth.transform.Rotate(0, 0, 1f, Space.World);
+    }
 }
