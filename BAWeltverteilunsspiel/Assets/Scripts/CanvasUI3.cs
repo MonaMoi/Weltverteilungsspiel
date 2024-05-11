@@ -14,6 +14,7 @@ public class Canvas3UI : MonoBehaviour
 
     private MeshRenderer myRenderer;
     private string answer3;
+    private float answer3Number;
 
 
     // Start is called before the first frame update
@@ -23,9 +24,10 @@ public class Canvas3UI : MonoBehaviour
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
 
-        answer3 = "Weltbevölkerung 17,9 %";
+        answer3 = "17,9%";
+        answer3Number = 17.9f * 0.02f;
 
-    }
+}
 
     // Update is called once per frame
     void Update()
@@ -60,7 +62,7 @@ public class Canvas3UI : MonoBehaviour
 
     public void OnPointerClick()
     {
-        FindObjectOfType<MyAnswerCanvasAfrica>().setAnswer(answer3);
+        FindObjectOfType<MyAnswerCanvasAfrica>().setAnswer(answer3, answer3Number);
         HideQuestion.SetActive(false);
 
 

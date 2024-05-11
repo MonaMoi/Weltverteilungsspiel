@@ -14,6 +14,7 @@ public class Canvas5UI : MonoBehaviour
 
     private MeshRenderer myRenderer;
     private string answer5;
+    private float answer5Number;
 
 
     // Start is called before the first frame update
@@ -23,7 +24,8 @@ public class Canvas5UI : MonoBehaviour
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
 
-        answer5 = "Weltbevölkerung 36,5 %";
+        answer5 = "36,5%";
+        answer5Number = 36.5f * 0.02f;
 
     }
 
@@ -60,7 +62,7 @@ public class Canvas5UI : MonoBehaviour
 
     public void OnPointerClick()
     {
-        FindObjectOfType<MyAnswerCanvasAsia>().setAnswer(answer5);
+        FindObjectOfType<MyAnswerCanvasAsia>().setAnswer(answer5, answer5Number);
         HideQuestion.SetActive(false);
 
 

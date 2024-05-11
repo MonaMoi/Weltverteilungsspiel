@@ -14,6 +14,8 @@ public class CanvasUI21 : MonoBehaviour
 
     private MeshRenderer myRenderer;
     private string answer21;
+    private float answer21Number;
+
 
 
     // Get Mesh Renderer of Object, set color of object to inactive, set method GazeAt to false, fill string with answer
@@ -23,7 +25,9 @@ public class CanvasUI21 : MonoBehaviour
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
 
-        answer21 = "Weltbevölkerung 0,3 %";
+        answer21 = "0,3%";
+        answer21Number = 0.3f * 0.02f;
+
 
     }
 
@@ -61,7 +65,7 @@ public class CanvasUI21 : MonoBehaviour
     // Call a method from another script and deliver parameter (Answer) and hide Question Canvas
     public void OnPointerClick()
     {
-        FindObjectOfType<MyAnswerCanvasAntartica>().setAnswer(answer21);
+        FindObjectOfType<MyAnswerCanvasAntartica>().setAnswer(answer21, answer21Number);
         HideQuestion.SetActive(false);
 
         /*if (button == "Option1")
