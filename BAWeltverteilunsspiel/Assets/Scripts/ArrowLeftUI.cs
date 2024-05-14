@@ -11,6 +11,8 @@ public class ArrowLeftUI : MonoBehaviour
 
     private MeshRenderer myRenderer;
 
+    private float clip2 = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,8 @@ public class ArrowLeftUI : MonoBehaviour
         //!TeleportRandomly();
         earth = GameObject.Find("Sphere");
         earth.transform.Rotate(0, 1f, 0, Space.World);
+
+        FindObjectOfType<Sounds>().playSound(clip2);
     }
     /*public void GazeAt(bool gazing)
     {

@@ -15,6 +15,7 @@ public class Canvas2UI : MonoBehaviour
     private MeshRenderer myRenderer;
     private string answer2;
     private float answer2Number;
+    private float clip3 = 3f;
 
 
 
@@ -65,6 +66,8 @@ public class Canvas2UI : MonoBehaviour
     {
         FindObjectOfType<MyAnswerCanvasAfrica>().setAnswer(answer2, answer2Number);
         HideQuestion.SetActive(false);
+
+        FindObjectOfType<Sounds>().playSound(clip3);
 
 
         /*if (button == "Option1")

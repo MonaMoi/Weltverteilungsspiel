@@ -12,6 +12,7 @@ public class MyAnswerCanvasAfrica : MonoBehaviour
     public TMP_Text BarNumber;
     public GameObject ShowCanvasStatistics;
     public GameObject BarDesc;
+    public GameObject HideRealStatistic;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class MyAnswerCanvasAfrica : MonoBehaviour
         ShowCanvasStatistics.SetActive(false);
         StatisticAfrica.SetActive(false);
         BarDesc.SetActive(false);
+        HideRealStatistic.SetActive(false);
     }
 
     // Update is called once per frame

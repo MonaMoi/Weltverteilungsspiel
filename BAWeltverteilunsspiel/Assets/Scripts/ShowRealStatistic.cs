@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowRightUI : MonoBehaviour
+public class ShowRealStatistic : MonoBehaviour
 {
     public Color InactiveColor;
     public Color GazedAtColor;
 
-    public GameObject earth;
-
     private MeshRenderer myRenderer;
 
-    private float clip2 = 2f;
+    public GameObject ShowReal;
+    public GameObject hideButton;
+    /*public GameObject AfricaReal;
+    public GameObject AsiaReal;
+    public GameObject EuropeReal;
+    public GameObject SouthamericaReal;
+    public GameObject NorthamericaReal;
+    public GameObject AustraliaReal;
+    public GameObject AntarticaReal;*/
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +25,7 @@ public class ArrowRightUI : MonoBehaviour
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
+
     }
 
     // Update is called once per frame
@@ -27,22 +34,17 @@ public class ArrowRightUI : MonoBehaviour
         
     }
 
-    /// <summary>
-    /// This method is called by the Main Camera when it starts gazing at this GameObject.
-    /// </summary>
     public void OnPointerEnter()
     {
         GazeAt(true);
     }
 
-    /// <summary>
-    /// This method is called by the Main Camera when it stops gazing at this GameObject.
-    /// </summary>
     public void OnPointerExit()
     {
         GazeAt(false);
     }
 
+    // Definition of GazeAt Method to set highlight material if OnPointerEnter else set Original Color OnPointerExit
     private void GazeAt(bool ggazedAt)
     {
         if (InactiveColor != null && GazedAtColor != null)
@@ -53,21 +55,7 @@ public class ArrowRightUI : MonoBehaviour
 
     public void OnPointerClick()
     {
-        //!TeleportRandomly();
-        earth = GameObject.Find("Sphere");
-        earth.transform.Rotate(0, -1f, 0, Space.World);
-
-        FindObjectOfType<Sounds>().playSound(clip2);
+        ShowReal.SetActive(true);
+        hideButton.SetActive(false);
     }
-    /*public void GazeAt(bool gazing)
-    {
-        if (gazing)
-        {
-            myRenderer.material.color = GazedAtColor;
-        }
-        else
-        {
-            myRenderer.material.color = InactiveColor;
-        }
-    }*/
 }

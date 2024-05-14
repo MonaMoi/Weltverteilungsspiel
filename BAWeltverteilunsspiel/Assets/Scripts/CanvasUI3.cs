@@ -15,6 +15,7 @@ public class Canvas3UI : MonoBehaviour
     private MeshRenderer myRenderer;
     private string answer3;
     private float answer3Number;
+    private float clip3 = 3f;
 
 
     // Start is called before the first frame update
@@ -64,6 +65,8 @@ public class Canvas3UI : MonoBehaviour
     {
         FindObjectOfType<MyAnswerCanvasAfrica>().setAnswer(answer3, answer3Number);
         HideQuestion.SetActive(false);
+
+        FindObjectOfType<Sounds>().playSound(clip3);
 
 
         /*if (button == "Option1")
