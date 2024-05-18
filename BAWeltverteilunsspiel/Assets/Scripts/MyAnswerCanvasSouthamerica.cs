@@ -1,7 +1,9 @@
-//using System.Collections;
+using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class MyAnswerCanvasSouthamerica : MonoBehaviour
 {
@@ -11,10 +13,16 @@ public class MyAnswerCanvasSouthamerica : MonoBehaviour
     public TMP_Text BarNumber;
     public GameObject BarDesc;
 
+    private string SceneName;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        Scene Current = SceneManager.GetActiveScene();
+        SceneName = Current.name;
+
         StatisticSouthamerica.SetActive(false);
         BarDesc.SetActive(false);
     }
@@ -30,9 +38,19 @@ public class MyAnswerCanvasSouthamerica : MonoBehaviour
     {
         StatisticSouthamerica.SetActive(true);
         BarDesc.SetActive(true);
-        canvasText.text = "Weltbevölkerung " + answer;
+        //canvasText.text = "Weltbevölkerung " + answer;
         BarNumber.text = answer;
         scaleChange = new Vector3(1, answerNumber, 1);
         StatisticSouthamerica.transform.localScale = scaleChange;
+
+        if (SceneName == "1Modul")
+        {
+            canvasText.text = "Weltbevölkerung " + answer;
+        }
+
+        if (SceneName == "2Modul")
+        {
+            canvasText.text = "Welteinkommen " + answer;
+        }
     }
 }

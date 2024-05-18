@@ -16,6 +16,7 @@ public class ArrowUpUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
@@ -56,6 +57,7 @@ public class ArrowUpUI : MonoBehaviour
         //!TeleportRandomly();
         earth = GameObject.Find("Sphere");
         earth.transform.Rotate(1f, 0, 0, Space.World);
+
 
         FindObjectOfType<Sounds>().playSound(clip2);
     }

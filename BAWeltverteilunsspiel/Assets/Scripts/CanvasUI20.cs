@@ -16,6 +16,7 @@ public class CanvasUI20 : MonoBehaviour
     private string answer20;
     private float answer20Number;
 
+    private float clip11 = 11f;
 
 
     // Get Mesh Renderer of Object, set color of object to inactive, set method GazeAt to false, fill string with answer
@@ -67,6 +68,8 @@ public class CanvasUI20 : MonoBehaviour
     {
         FindObjectOfType<MyAnswerCanvasAntartica>().setAnswer(answer20, answer20Number);
         HideQuestion.SetActive(false);
+
+        FindObjectOfType<SoundsModul1>().playSound(clip11);
 
         /*if (button == "Option1")
         {

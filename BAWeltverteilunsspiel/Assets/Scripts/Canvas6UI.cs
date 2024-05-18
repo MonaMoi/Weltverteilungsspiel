@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Canvas6UI : MonoBehaviour
 {
@@ -16,17 +17,34 @@ public class Canvas6UI : MonoBehaviour
     private string answer6;
     private float answer6Number;
 
+    private float clip6 = 6f;
+    private float clip15 = 15f;
+
+
+    private string SceneName;
 
     // Start is called before the first frame update
     void Start()
     {
+        Scene Current = SceneManager.GetActiveScene();
+        SceneName = Current.name;
+
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
 
-        answer6 = "21,8%";
-        answer6Number = 21.8f * 0.02f;
 
+        if (SceneName == "1Modul")
+        {
+            answer6 = "21,8%";
+            answer6Number = 21.8f * 0.02f;
+        }
+
+        if (SceneName == "2Modul")
+        {
+            answer6 = "37,7%";
+            answer6Number = 37.7f * 0.02f;
+        }
 
     }
 
@@ -65,6 +83,16 @@ public class Canvas6UI : MonoBehaviour
     {
         FindObjectOfType<MyAnswerCanvasAsia>().setAnswer(answer6, answer6Number);
         HideQuestion.SetActive(false);
+
+        if (SceneName == "1Modul")
+        {
+            FindObjectOfType<SoundsModul1>().playSound(clip6);
+        }
+
+        if (SceneName == "2Modul")
+        {
+            FindObjectOfType<SoundsModul2>().playSound(clip15);
+        }
 
 
         /*if (button == "Option1")

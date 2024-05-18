@@ -1,6 +1,8 @@
-//using System.Collections;
+using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CanvasUI9 : MonoBehaviour
 {
@@ -13,17 +15,36 @@ public class CanvasUI9 : MonoBehaviour
     private string answer9;
     private float answer9Number;
 
+    private float clip7 = 7f;
+    private float clip16 = 16f;
+
+
+    private string SceneName;
 
 
     // Get Mesh Renderer of Object, set color of object to inactive, set method GazeAt to false, fill string with answer
     void Start()
     {
+        Scene Current = SceneManager.GetActiveScene();
+        SceneName = Current.name;
+
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
 
-        answer9 = "49,1%";
-        answer9Number = 49.1f * 0.02f;
+       
+        if (SceneName == "1Modul")
+        {
+            answer9 = "49,1%";
+            answer9Number = 49.1f * 0.02f;
+        }
+
+        if (SceneName == "2Modul")
+        {
+            answer9 = "39,1%";
+            answer9Number = 39.1f * 0.02f;
+        }
+
 
     }
 
@@ -63,6 +84,17 @@ public class CanvasUI9 : MonoBehaviour
     {
         FindObjectOfType<MyAnswerCanvasEurope>().setAnswer(answer9, answer9Number);
         HideQuestion.SetActive(false);
+
+        if (SceneName == "1Modul")
+        {
+            FindObjectOfType<SoundsModul1>().playSound(clip7);
+        }
+
+        if (SceneName == "2Modul")
+        {
+            FindObjectOfType<SoundsModul2>().playSound(clip16);
+        }
+
 
         /*if (button == "Option1")
         {

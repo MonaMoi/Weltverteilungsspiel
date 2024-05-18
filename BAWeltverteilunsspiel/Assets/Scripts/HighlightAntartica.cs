@@ -18,7 +18,6 @@ public class HighlightAntartica : MonoBehaviour
     public GameObject CanvasShoworHideAntartica;
 
 
-    public GameObject CanvasAnswers;
 
     Material antartica;
 
@@ -42,7 +41,6 @@ public class HighlightAntartica : MonoBehaviour
         // set bool to false to not show Continent name, Question canvas and Answer Canvas on start on Start
         descText.SetActive(false);
         CanvasShoworHideAntartica.SetActive(false);
-        CanvasAnswers.SetActive(false);
     }
 
     void Update()
@@ -56,7 +54,6 @@ public class HighlightAntartica : MonoBehaviour
     {
         GazeAt(true);
         descText.SetActive(true);
-        CanvasAnswers.SetActive(true);
 
     }
 
@@ -65,7 +62,6 @@ public class HighlightAntartica : MonoBehaviour
     {
         GazeAt(false);
         descText.SetActive(false);
-        CanvasAnswers.SetActive(false);
 
     }
 

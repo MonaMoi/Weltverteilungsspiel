@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
@@ -16,19 +17,40 @@ public class Canvas3UI : MonoBehaviour
     private string answer3;
     private float answer3Number;
     private float clip3 = 3f;
+    private float clip5 = 5f;
+    private float clip14 = 14f;
 
+    private string SceneName;
 
     // Start is called before the first frame update
     void Start()
     {
+        Scene Current = SceneManager.GetActiveScene();
+        SceneName = Current.name;
+
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
 
-        answer3 = "17,9%";
-        answer3Number = 17.9f * 0.02f;
+        if (SceneName == "Pretraining")
+        {
+            answer3 = "17,9%";
+            answer3Number = 17.9f * 0.02f;
+        }
 
-}
+        if (SceneName == "1Modul")
+        {
+            answer3 = "17,9%";
+            answer3Number = 17.9f * 0.02f;
+        }
+
+        if (SceneName == "2Modul")
+        {
+            answer3 = "2,8%";
+            answer3Number = 2.8f * 0.02f;
+        }
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -60,13 +82,32 @@ public class Canvas3UI : MonoBehaviour
         }
     }
 
+    public void SceneLoader()
+    {
+        //yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("1Modul");
+    }
 
     public void OnPointerClick()
     {
         FindObjectOfType<MyAnswerCanvasAfrica>().setAnswer(answer3, answer3Number);
         HideQuestion.SetActive(false);
 
-        FindObjectOfType<Sounds>().playSound(clip3);
+        if (SceneName == "Pretraining")
+        {
+            FindObjectOfType<Sounds>().playSound(clip3);
+            Invoke("SceneLoader", 17);
+        }
+
+        if (SceneName == "1Modul")
+        {
+            FindObjectOfType<SoundsModul1>().playSound(clip5);
+        }
+
+        if (SceneName == "2Modul")
+        {
+            FindObjectOfType<SoundsModul2>().playSound(clip14);
+        }
 
 
         /*if (button == "Option1")
