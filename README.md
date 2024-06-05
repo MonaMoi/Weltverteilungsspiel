@@ -20,7 +20,7 @@ In der Bachelorarbeit wurde das traditionelle Weltverteilungsspiel nach den Gest
 
 ##Projekt öffnen und starten:
     - Sicherstellen, dass USB-Debugging auf dem Smartphone aktiviert ist.
-    - Aus dem Repository die Datei "" herunterladen und auf dem Smartphone installieren.
+    - Aus dem Repository die Datei "APK" > "WVSFinal" herunterladen und auf dem Smartphone installieren und starten.
 
 ##Interaktion:
     - Navigieren Sie durch die VR-Umgebung mit den Kopfbewegungen.
