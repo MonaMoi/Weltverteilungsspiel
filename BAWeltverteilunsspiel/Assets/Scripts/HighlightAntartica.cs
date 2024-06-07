@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HighlightAntartica : MonoBehaviour
@@ -9,13 +7,13 @@ public class HighlightAntartica : MonoBehaviour
 
     public GameObject descText;
 
-    public GameObject CanvasShoworHideAfrica;
+    /*public GameObject CanvasShoworHideAfrica;
     public GameObject CanvasShoworHideAsia;
     public GameObject CanvasShoworHideEurope;
     public GameObject CanvasShoworHideSouthamerica;
     public GameObject CanvasShoworHideNorthamerica;
     public GameObject CanvasShoworHideAustralia;
-    public GameObject CanvasShoworHideAntartica;
+    public GameObject CanvasShoworHideAntartica;*/
 
 
 
@@ -40,7 +38,7 @@ public class HighlightAntartica : MonoBehaviour
 
         // set bool to false to not show Continent name, Question canvas and Answer Canvas on start on Start
         descText.SetActive(false);
-        CanvasShoworHideAntartica.SetActive(false);
+        //CanvasShoworHideAntartica.SetActive(false);
     }
 
     void Update()
@@ -82,7 +80,7 @@ public class HighlightAntartica : MonoBehaviour
         }
     }
 
-    // Check if Question Canvas from different continents are visible and hide it, else show Question Canvas of pointed continent
+    /*// Check if Question Canvas from different continents are visible and hide it, else show Question Canvas of pointed continent
     public void OnPointerClick()
     {
         if (CanvasShoworHideAsia)
@@ -109,5 +107,5 @@ public class HighlightAntartica : MonoBehaviour
         //!TeleportRandomly();
         // CanvasShoworHide = GameObject.Find("Canvas1");
         // CanvasShoworHide.SetActive(true);
-    }
+    }*/
 }

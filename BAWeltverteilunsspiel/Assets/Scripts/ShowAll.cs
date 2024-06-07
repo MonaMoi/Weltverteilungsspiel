@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -12,7 +10,6 @@ public class ShowAll : MonoBehaviour
     public GameObject Modul1;
 
     private float clip21 = 21f;
-
 
     public GameObject hideAfricaStatistics;
     public GameObject hideAfricaNumber;
@@ -35,7 +32,6 @@ public class ShowAll : MonoBehaviour
 
     private MeshRenderer myRenderer;
 
-
     Material africa;
     public GameObject BarAfrica;
     Material asia;
@@ -49,7 +45,10 @@ public class ShowAll : MonoBehaviour
     Material australia;
     public GameObject BarAustralia;
 
-    // Start is called before the first frame update
+    // Get Mesh Renderer of Object
+    // Set color of object to inactive on start
+    // Set method GazeAt to false
+    // Load Material from Resources Folder into Variable
     void Start()
     {
         myRenderer = GetComponent<MeshRenderer>();
@@ -64,17 +63,13 @@ public class ShowAll : MonoBehaviour
         australia = Resources.Load("Australia") as Material;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Method is called by the Main Camera when it starts gazing at this GameObject
     public void OnPointerEnter()
     {
         GazeAt(true);
     }
 
+    // Method is called by the Main Camera when it stops gazing at this GameObject
     public void OnPointerExit()
     {
         GazeAt(false);
@@ -89,6 +84,9 @@ public class ShowAll : MonoBehaviour
         }
     }
 
+    // Call Method "playSound" from another Script
+    // Set active false for several Objects to hide answers
+    // Set Materials for several Gameobjects
     public void OnPointerClick()
     {
         Modul1.SetActive(true);
@@ -121,6 +119,5 @@ public class ShowAll : MonoBehaviour
         BarSouthamerica.GetComponent<MeshRenderer>().material = southamerica;
         BarNorthamerica.GetComponent<MeshRenderer>().material = northamerica;
         BarAustralia.GetComponent<MeshRenderer>().material = australia;
-
     }
 }

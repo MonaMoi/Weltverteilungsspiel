@@ -1,4 +1,4 @@
-# Weltverteilungsspiel
+# Weltverteilungsspiel in VR
 Modulprüfung zur Bachelorarbeit: "Transformation des Weltverteilungsspiels –
 Eine Untersuchung der immersiven virtuellen Lernumgebung im Kontext des Globalen Lernens"
 
@@ -18,9 +18,26 @@ In der Bachelorarbeit wurde das traditionelle Weltverteilungsspiel nach den Gest
     - Google Carboard oder ähnliche VR-Brille
     - Android Smartphone (mit aktiviertem USB-Debugging!)
 
-##Projekt öffnen und starten:
+##Projekt direkt auf Smartphone öffnen und starten:
     - Sicherstellen, dass USB-Debugging auf dem Smartphone aktiviert ist.
-    - Aus dem Repository die Datei "APK" > "WVSFinal" herunterladen und auf dem Smartphone installieren und starten.
+    - Die apk-Datei "WVSFinal" herunterladen und auf dem Smartphone installieren und starten.
+
+##Projekt in Unity öffnen und auf Smartphone builden:
+    - Repository klonen.
+    - Unity Hub öffnen und über "Add" das gellonte Verzeichnis auswählen.
+    - Projekt öffnen.
+    - Projekt für Android konfigurieren:
+        1. Android Buil Support über Unity Hub installieren ("Installs" > "Add Modules" > "Android Build Support").
+        2. Sicherstellen, dass Android SDK und NDK installiert sind ("Installs" > "Add Modules" > "OpenJDK" + "Android SDK & NDK Tools").
+        3. Build Einstellungen konfigurieren:
+            - Szene laden.
+            - Build Settings öffnen ("File" > "Build Settiings").
+            - Android auswählen und auf "Switch Platform" klicken.
+    - Projekt auf Android Smartphone öffnen:
+        - Android Smartphone anschließen und in den Build Settings unter "Run Device" auswählen.
+        - Sicherstellen, dass USB-Debugging auf dem Smartphone aktiviert ist.
+        - Auf "Build and Run" klicken, um App direkt auf dem Smartphone zu installieren und zu starten
+        - Die Interaktion funktioniert nur auf dem Smartphone!
 
 ##Interaktion:
     - Navigieren Sie durch die VR-Umgebung mit den Kopfbewegungen.

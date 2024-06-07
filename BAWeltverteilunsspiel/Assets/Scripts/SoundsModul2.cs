@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundsModul2 : MonoBehaviour
@@ -23,12 +21,7 @@ public class SoundsModul2 : MonoBehaviour
     private bool clip20Status = false;
     private bool clip21Status = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    // Method to play Clip based on Clip Status
     public void playSound(float clipStatus)
     {
 
@@ -97,21 +90,4 @@ public class SoundsModul2 : MonoBehaviour
 
         }
     }
-
-
-    /*public void playSound()
-    {
-        if (counter == 1)
-        {
-            source.PlayOneShot(clip3);
-            counter = counter + 1;
-        }
-
-        if (counter == 2)
-        {
-            source.PlayOneShot(clip2);
-            counter = counter + 1;
-        }
-
-    }*/
 }

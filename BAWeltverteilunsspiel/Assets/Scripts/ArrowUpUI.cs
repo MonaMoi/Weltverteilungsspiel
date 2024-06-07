@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowUpUI : MonoBehaviour
@@ -13,7 +11,7 @@ public class ArrowUpUI : MonoBehaviour
 
     private float clip2 = 2f;
 
-    // Start is called before the first frame update
+    // Get the Mesh Renderer of GameObject and set color to inactive Color and bool to false on start
     void Start()
     {
         
@@ -22,28 +20,19 @@ public class ArrowUpUI : MonoBehaviour
         GazeAt(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    /// <summary>
-    /// This method is called by the Main Camera when it starts gazing at this GameObject.
-    /// </summary>
+    // Method is called by the Main Camera when it starts gazing at this GameObject
     public void OnPointerEnter()
     {
         GazeAt(true);
     }
 
-    /// <summary>
-    /// This method is called by the Main Camera when it stops gazing at this GameObject.
-    /// </summary>
+    // Method is called by the Main Camera when it stops gazing at this GameObject
     public void OnPointerExit()
     {
         GazeAt(false);
     }
 
+    // Definition of GazeAt Method to set highlight material if OnPointerEnter else set Original Color OnPointerExit
     private void GazeAt(bool ggazedAt)
     {
         if (InactiveColor != null && GazedAtColor != null)
@@ -52,24 +41,12 @@ public class ArrowUpUI : MonoBehaviour
         }
     }
 
+    //Method to rotate GameObject Sphere on click and calls Method "playSound" from another Script "Sound"
     public void OnPointerClick()
     {
-        //!TeleportRandomly();
         earth = GameObject.Find("Sphere");
         earth.transform.Rotate(1f, 0, 0, Space.World);
 
-
         FindObjectOfType<Sounds>().playSound(clip2);
     }
-    /*public void GazeAt(bool gazing)
-    {
-        if (gazing)
-        {
-            myRenderer.material.color = GazedAtColor;
-        }
-        else
-        {
-            myRenderer.material.color = InactiveColor;
-        }
-    }*/
 }

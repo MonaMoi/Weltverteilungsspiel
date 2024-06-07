@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/Google Cardboard XR Plugin for Unity/1.24.0/Hello Cardboard/Scenes/HelloCardboard.unity
     guid: 145a2a45d7bc746b19cb68410368bf96
+  - enabled: 0
+    path: Assets/Scenes/StartMenu.unity
+    guid: 5e7fc1feeacf74196a393286be3577c4
+  - enabled: 1
+    path: Assets/Scenes/StartMenue.unity
+    guid: d66e321cff0194b05a6f62edf36fbd63
   - enabled: 1
     path: Assets/Scenes/Pretraining.unity
     guid: 730db81e94e1048f69da88d807c04d54

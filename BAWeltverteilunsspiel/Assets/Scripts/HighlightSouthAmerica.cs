@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HighlightSouthAmerica : MonoBehaviour
@@ -43,13 +41,8 @@ public class HighlightSouthAmerica : MonoBehaviour
         CanvasAnswers.SetActive(false);
     }
 
-    void Update()
-    {
-
-    }
-
-
-    /// Method is called by the Main Camera when it starts gazing at this GameObject and Continent name is visible
+    // Method is called by the Main Camera when it starts gazing at this GameObject
+    // Set active true to show Continent name and Overview with answers
     public void OnPointerEnter()
     {
         GazeAt(true);
@@ -57,7 +50,8 @@ public class HighlightSouthAmerica : MonoBehaviour
         CanvasAnswers.SetActive(true);
     }
 
-    /// Method is called by the Main Camera when it stops gazing at this GameObject and continent name is not visible
+    // Method is called by the Main Camera when it stops gazing at this GameObject and continent name is not visible
+    // Set active false to hide Continent name and Overview with answers
     public void OnPointerExit()
     {
         GazeAt(false);
@@ -104,9 +98,5 @@ public class HighlightSouthAmerica : MonoBehaviour
             CanvasShoworHideAntartica.SetActive(false);
 
         CanvasShoworHideSouthamerica.SetActive(true);
-
-        //!TeleportRandomly();
-        // CanvasShoworHide = GameObject.Find("Canvas1");
-        // CanvasShoworHide.SetActive(true);
     }
 }

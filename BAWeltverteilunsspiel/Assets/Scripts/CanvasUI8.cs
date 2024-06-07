@@ -3,27 +3,29 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class CanvasUI8 : MonoBehaviour
 {
     public Color InactiveColor;
     public Color GazedAtColor;
+
     public GameObject myCanvas;
     public GameObject HideQuestion;
 
     private MeshRenderer myRenderer;
+
     private string answer8;
     private float answer8Number;
 
     private float clip7 = 7f;
     private float clip16 = 16f;
 
-
     private string SceneName;
 
-
-
-    // Get Mesh Renderer of Object, set color of object to inactive, set method GazeAt to false, fill string with answer
+    // Get Current Scene and set to variable
+    // Get Mesh Renderer of Object
+    // Set color of object to inactive
+    // Set method GazeAt to false
+    // Fill variables with answer based on Scnene name
     void Start()
     {
         Scene Current = SceneManager.GetActiveScene();
@@ -32,8 +34,6 @@ public class CanvasUI8 : MonoBehaviour
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
-
-      
 
         if (SceneName == "1Modul")
         {
@@ -49,23 +49,13 @@ public class CanvasUI8 : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    /// <summary>
-    /// This method is called by the Main Camera when it starts gazing at this GameObject.
-    /// </summary>
+    // Method is called by the Main Camera when it starts gazing at this GameObject
     public void OnPointerEnter()
     {
         GazeAt(true);
     }
 
-    /// <summary>
-    /// This method is called by the Main Camera when it stops gazing at this GameObject.
-    /// </summary>
+    // Method is called by the Main Camera when it stops gazing at this GameObject
     public void OnPointerExit()
     {
         GazeAt(false);
@@ -80,12 +70,12 @@ public class CanvasUI8 : MonoBehaviour
         }
     }
 
-    // Call a method from another script and deliver parameter (Answer) and hide Question Canvas
+    // Call a method from another script and deliver parameter (Answer) and set bool to false to hide Question Canvas
+    // Call Method "playSound" from another Script based on Current SceneName
     public void OnPointerClick()
     {
         FindObjectOfType<MyAnswerCanvasEurope>().setAnswer(answer8, answer8Number);
         HideQuestion.SetActive(false);
-
 
         if (SceneName == "1Modul")
         {
@@ -96,37 +86,6 @@ public class CanvasUI8 : MonoBehaviour
         {
             FindObjectOfType<SoundsModul2>().playSound(clip16);
         }
-
-
-        /*if (button == "Option1")
-        {
-            FindObjectOfType<MyAnswerCanvas>().setAnswer(answer1);
-        }
-
-        if (button == "answer2")
-        {
-
-        }
-
-        if (button == "answer3")
-        {
-
-        }
-        //!TeleportRandomly();
-        //earth = GameObject.Find("Sphere");
-        //earth.transform.Rotate(0, 1f, 0, Space.World);*/
     }
-
-    /*public void GazeAt(bool gazing)
-    {
-        if (gazing)
-        {
-            myRenderer.material.color = GazedAtColor;
-        }
-        else
-        {
-            myRenderer.material.color = InactiveColor;
-        }
-    }*/
 }
 

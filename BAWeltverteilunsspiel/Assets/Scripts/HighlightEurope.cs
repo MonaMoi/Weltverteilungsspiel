@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HighlightEurope : MonoBehaviour
@@ -44,13 +42,8 @@ public class HighlightEurope : MonoBehaviour
         CanvasAnswers.SetActive(false);
     }
 
-    void Update()
-    {
-
-    }
-
-
-    /// Method is called by the Main Camera when it starts gazing at this GameObject and continent name is visible
+    // Method is called by the Main Camera when it starts gazing at this GameObject
+    // Set active true to show Continent name and Overview with answers
     public void OnPointerEnter()
     {
         GazeAt(true);
@@ -60,7 +53,8 @@ public class HighlightEurope : MonoBehaviour
         CanvasAnswers.SetActive(true);
     }
 
-    /// Method is called by the Main Camera when it stops gazing at this GameObject and continent name is not visible
+    // Method is called by the Main Camera when it stops gazing at this GameObject and continent name is not visible
+    // Set active false to hide Continent name and Overview with answers
     public void OnPointerExit()
     {
         GazeAt(false);
@@ -109,9 +103,5 @@ public class HighlightEurope : MonoBehaviour
             CanvasShoworHideAntartica.SetActive(false);
 
         CanvasShoworHideEurope.SetActive(true);
-
-        //!TeleportRandomly();
-        // CanvasShoworHide = GameObject.Find("Canvas1");
-        // CanvasShoworHide.SetActive(true);
     }
 }

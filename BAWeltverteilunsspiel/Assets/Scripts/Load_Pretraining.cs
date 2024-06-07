@@ -1,15 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ArrowLeftUI : MonoBehaviour
+public class Load_Pretraining : MonoBehaviour
 {
     public Color InactiveColor;
     public Color GazedAtColor;
 
-    public GameObject earth;
-
     private MeshRenderer myRenderer;
-
-    private float clip2 = 2f;
 
     // Get the Mesh Renderer of GameObject and set color to inactive Color and bool to false on start
     void Start()
@@ -40,12 +37,9 @@ public class ArrowLeftUI : MonoBehaviour
         }
     }
 
-    //Method to rotate GameObject Sphere on click and calls Method "playSound" from another Script "Sound"
+    // Load Scene on click
     public void OnPointerClick()
     {
-        earth = GameObject.Find("Sphere");
-        earth.transform.Rotate(0, 1f, 0, Space.World);
-
-        FindObjectOfType<Sounds>().playSound(clip2);
+        SceneManager.LoadScene("Pretraining");
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,46 +10,36 @@ public class ShowRealStatistic : MonoBehaviour
     private MeshRenderer myRenderer;
 
     public GameObject ShowReal;
+
     public GameObject hideButton;
     public GameObject ShowButton2;
-    /*public GameObject AfricaReal;
-    public GameObject AsiaReal;
-    public GameObject EuropeReal;
-    public GameObject SouthamericaReal;
-    public GameObject NorthamericaReal;
-    public GameObject AustraliaReal;
-    public GameObject AntarticaReal;*/
 
     private float clip12 = 12f;
     private float clip20 = 20f;
 
     private string SceneName;
 
-
-    // Start is called before the first frame update
+    // Get Current Scene and set to variable
+    // Get Mesh Renderer of Object
+    // Set color of object to inactive
+    // Set method GazeAt to false
     void Start()
     {
         Scene Current = SceneManager.GetActiveScene();
         SceneName = Current.name;
 
-
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Method is called by the Main Camera when it starts gazing at this GameObject
     public void OnPointerEnter()
     {
         GazeAt(true);
     }
 
+    // Method is called by the Main Camera when it stops gazing at this GameObject
     public void OnPointerExit()
     {
         GazeAt(false);
@@ -66,6 +54,7 @@ public class ShowRealStatistic : MonoBehaviour
         }
     }
 
+    // Call Method "playSound" from another Script based on Current SceneName
     public void OnPointerClick()
     {
         ShowReal.SetActive(true);

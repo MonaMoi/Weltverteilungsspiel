@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HighlightAsia : MonoBehaviour
@@ -16,7 +14,6 @@ public class HighlightAsia : MonoBehaviour
     public GameObject CanvasShoworHideNorthamerica;
     public GameObject CanvasShoworHideAustralia;
     public GameObject CanvasShoworHideAntartica;
-
 
     public GameObject CanvasAnswers;
 
@@ -45,13 +42,9 @@ public class HighlightAsia : MonoBehaviour
         CanvasAnswers.SetActive(false);
     }
 
-    void Update()
-    {
 
-    }
-
-
-    /// Method is called by the Main Camera when it starts gazing at this GameObject and continent name is visible
+    // Method is called by the Main Camera when it starts gazing at this GameObject
+    // Set active true to show Continent name and Overview with answers
     public void OnPointerEnter()
     {
         GazeAt(true);
@@ -59,7 +52,8 @@ public class HighlightAsia : MonoBehaviour
         CanvasAnswers.SetActive(true);
     }
 
-    /// Method is called by the Main Camera when it stops gazing at this GameObject and continent name is not visible
+    // Method is called by the Main Camera when it stops gazing at this GameObject and continent name is not visible
+    // Set active false to hide Continent name and Overview with answers
     public void OnPointerExit()
     {
         GazeAt(false);
@@ -106,9 +100,5 @@ public class HighlightAsia : MonoBehaviour
             CanvasShoworHideAntartica.SetActive(false);
 
         CanvasShoworHideAsia.SetActive(true);
-
-        //!TeleportRandomly();
-        //earth = GameObject.Find("Sphere");
-        //earth.transform.Rotate(0, 0, 1f, Space.World);
     }
 }

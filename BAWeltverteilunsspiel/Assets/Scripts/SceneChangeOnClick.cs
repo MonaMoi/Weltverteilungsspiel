@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,31 +8,21 @@ public class SceneChangeOnClick : MonoBehaviour
 
     private MeshRenderer myRenderer;
 
-    //FadeInOut fade;
-
-    // Start is called before the first frame update
+    // Get the Mesh Renderer of GameObject and set color to inactive Color and bool to false on start
     void Start()
     {
         myRenderer = GetComponent<MeshRenderer>();
         myRenderer.material.color = InactiveColor;
         GazeAt(false);
-
-       // fade = FindObjectOfType<FadeInOut>();
     }
 
-   /* public IEnumerator ChangeScene()
-    {
-        fade.FadeIn();
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("2Modul");
-    }*/
-
- 
+    // Method is called by the Main Camera when it starts gazing at this GameObject
     public void OnPointerEnter()
     {
         GazeAt(true);
     }
 
+    // Method is called by the Main Camera when it stops gazing at this GameObject
     public void OnPointerExit()
     {
         GazeAt(false);
@@ -49,9 +37,9 @@ public class SceneChangeOnClick : MonoBehaviour
         }
     }
 
+    // Method to load Scene
     public void OnPointerClick()
     {
-        //StartCoroutine(ChangeScene());
         SceneManager.LoadScene("2Modul");
     }
 }
