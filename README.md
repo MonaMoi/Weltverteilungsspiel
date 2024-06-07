@@ -20,10 +20,10 @@ In der Bachelorarbeit wurde das traditionelle Weltverteilungsspiel nach den Gest
 
 ##Projekt direkt auf Smartphone öffnen und starten:
     - Sicherstellen, dass USB-Debugging auf dem Smartphone aktiviert ist.
-    - Die apk-Datei "WVSFinal" herunterladen und auf dem Smartphone installieren und starten.
+    - Die apk-Datei "WeltverteilungsspielVR" (unter "Weltverteilungsspiel" > "APK")herunterladen und auf dem Smartphone installieren und starten.
 
 ##Projekt in Unity öffnen und auf Smartphone builden:
-    - Repository klonen.
+    - GitHub-Repository klonen.
     - Unity Hub öffnen und über "Add" das gellonte Verzeichnis auswählen.
     - Projekt öffnen.
     - Projekt für Android konfigurieren:
