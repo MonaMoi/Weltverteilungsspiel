@@ -23,8 +23,8 @@ In der Bachelorarbeit wurde das traditionelle Weltverteilungsspiel nach den Gest
     - Die apk-Datei unter "APK" > "WeltverteilungsspielVR" herunterladen und auf dem Smartphone installieren und starten.
 
 ##Projekt in Unity öffnen und auf Smartphone builden:
-    - GitHub-Repository klonen.
-    - Unity Hub öffnen und über "Add" das gellonte Verzeichnis auswählen.
+    - Repository über GitHub (https://github.com/MonaMoi/Weltverteilungsspiel/) klonen.    
+    - Unity Hub öffnen und über "Add" das geklonte Verzeichnis auswählen.
     - Projekt öffnen.
     - Projekt für Android konfigurieren:
         1. Android Buil Support über Unity Hub installieren ("Installs" > "Add Modules" > "Android Build Support").
